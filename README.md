@@ -15,7 +15,7 @@ Additional functionality:
 * `Census.pop_other(colname)`: pop question matching `colname` from data and print the responses. Used to clean data and display responses to 'Other (please specify) - Text'
 * `alias_labels(df, als)`: returns a new dataframe from `df` with column `alias` of new, user-defined names for labels provided by dict `als`
 
-Notebook used to analyze 2025 GA Financial Census data can be found in `./notebook`.
+Notebook used to analyze 2025 GA Financial Census data can be found in `./notebook/gafincens2025.ipynb`.
 
 ## How to use
 To handle the data, Census.py provides the `Census` class. From a high-level, data analysis proceeds as follows:
