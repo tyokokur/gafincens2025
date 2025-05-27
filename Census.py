@@ -2,6 +2,7 @@ import numpy as np, pandas as pd
 
 class Census:
     """Analysis of Qualtrics data, designed for UC Berkeley Graduate Assembly 2025 Financial Census
+    
     """
     def __init__(self, filepath='', header=1, datarange=(17,None), from_file=True, 
                  orig_df=pd.DataFrame({'empty':[0]}), orig_datarange=(None,None)):
