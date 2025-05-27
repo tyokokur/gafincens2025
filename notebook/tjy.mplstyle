@@ -1,0 +1,72 @@
+## IMPORT WITH: mpl.rc_file('tjy.mplstyle')
+
+## Function to print ticklabels in mathmode. (Use by pasting function into code and calling with ticks() for single axes or ticks(axs) for subplots)
+# def ticks(axs = []):
+#    import matplotlib.pyplot as plt, numpy as np
+#    
+#    kw = {'fontname': 'serif'}
+#    if not np.any(axs): 
+#        plt.yticks(**kw) 
+#        plt.xticks(**kw)
+#    
+#    dims = np.shape(axs)
+#    try:
+#        for i in range(dims[0]): 
+#            for j in range(dims[1]):
+#                for k in axs[i,j]: 
+#                    plt.sca(k)
+#                    plt.yticks(**kw)
+#                    plt.xticks(**kw)
+#        return
+#    except IndexError:            
+#        for i in axs: 
+#            plt.sca(i)
+#            plt.yticks(**kw)
+#            plt.xticks(**kw)
+#        return
+
+figure.figsize:    6.4, 4.8
+
+font.family:       sans-serif
+font.sans-serif:   TeX Gyre Heros  ## If you want to use this, you will need to download the font files
+font.serif:        CMU Serif       ## If you want to use this, you will need to download the font files
+font.weight:       normal
+
+text.usetex:       False
+text.latex.preamble: \usepackage{bm,mathtools,amsmath}
+mathtext.fontset:  cm
+
+axes.titlesize:    24
+axes.titlepad:     10
+axes.linewidth:    2.0
+axes.labelsize:    20
+axes.labelpad:     10
+
+lines.linewidth:   2.0
+lines.markersize:  6
+lines.markeredgewidth: 1.5
+
+xtick.direction:   in
+xtick.major.size:  6
+xtick.major.width: 2.0
+xtick.major.pad:   12
+xtick.minor.size : 4
+xtick.minor.width: 1
+xtick.labelsize:   16
+
+ytick.direction:   out
+ytick.major.size:  6
+ytick.major.width: 2.0
+ytick.major.pad:   6
+ytick.minor.size:  4
+ytick.minor.width: 1
+ytick.labelsize:   16
+
+legend.fancybox:   False
+legend.frameon:    False
+legend.fontsize:   14
+legend.edgecolor:  0.0
+legend.borderaxespad: 1.0
+
+savefig.dpi:       900
+savefig.bbox:      tight
