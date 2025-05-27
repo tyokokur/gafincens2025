@@ -24,6 +24,7 @@ class Census:
     count_multi_choice(colname, sort=True)
         for a multi-choice ("select all that apply") question, returns df of choices and number of responses indicating that choice
     """
+    
     def __init__(self, filepath='', header=1, datarange=(17,None), from_file=True, 
                  orig_df=pd.DataFrame({'empty':[0]}), orig_datarange=(None,None)):
         if from_file:
