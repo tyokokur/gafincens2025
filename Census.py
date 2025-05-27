@@ -18,7 +18,8 @@ class Census:
         
     Methods
     _______
-    
+    count_single_choice(colname, sort=True)
+        for a single-choice question, returns df of choices and number of responses indicating that choice
     """
     def __init__(self, filepath='', header=1, datarange=(17,None), from_file=True, 
                  orig_df=pd.DataFrame({'empty':[0]}), orig_datarange=(None,None)):
