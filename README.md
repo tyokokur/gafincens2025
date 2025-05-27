@@ -8,8 +8,9 @@ Census.py module for analyzing Qualtrics dataset, containing two main functions:
 
 To handle the data, Census.py provides the `Census` class. From a high-level, data analysis proceeds as follows:
 1. Initialize an instance of the class:
-    > `census_class = Census.Census(filepath, datarange=(start, stop))`, where
-    >
-    > `filepath`: location of the file (e.g., 'C:/Users/username/Desktop/Qualtrics_export.csv')
-    > `(start, stop)`: range of relevant data columns to proceed with
-2. Test
+   ```
+   `census_class = Census.Census(filepath, datarange=(start, stop))`, where
+    `filepath`: location of the file (e.g., 'C:/Users/username/Desktop/Qualtrics_export.csv')
+    `(start, stop)`: range of relevant data columns to proceed with
+   ```
+3. Test
