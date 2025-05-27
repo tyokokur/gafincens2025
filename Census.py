@@ -8,7 +8,12 @@ class Census:
     Attributes
     __________
     data_df : pandas DataFrame
-        extracted data fr
+        extracted data from csv with each row as a survey response
+    qlist : list of str
+        questions asked in survey (columns of data_df)
+    datarange: tuple of int
+        range of columns to store
+    
     """
     def __init__(self, filepath='', header=1, datarange=(17,None), from_file=True, 
                  orig_df=pd.DataFrame({'empty':[0]}), orig_datarange=(None,None)):
