@@ -14,4 +14,14 @@ To handle the data, Census.py provides the `Census` class. From a high-level, da
     `filepath`: location of the file (e.g., 'C:/Users/username/Desktop/Qualtrics_export.csv')
    
     `(start, stop)`: range of relevant data columns to proceed with
-3. Test
+2. A summary of the data will be provided for reference. Sample output:
+   ```
+   Initialization completed.
+   Data recorded
+	    from column R: 
+		    "What division is your program in? - Selected Choice"
+	    to column BS: 
+		    "If you would like to provide more information on accessibility, please do so here."
+   362 responses.
+   54 questions asked.
+   ```
