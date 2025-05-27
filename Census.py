@@ -11,8 +11,13 @@ class Census:
         extracted data from csv with each row as a survey response
     qlist : list of str
         questions asked in survey (columns of data_df)
-    datarange: tuple of int
-        range of columns to store
+    datarange : tuple of int
+        range of columns (questions) to store
+    num_popped : int
+        tracker of columns popped to maintain correct original spreadsheet column names
+        
+    Methods
+    _______
     
     """
     def __init__(self, filepath='', header=1, datarange=(17,None), from_file=True, 
