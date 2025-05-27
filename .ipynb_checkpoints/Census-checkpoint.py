@@ -1,9 +1,9 @@
 import numpy as np, pandas as pd
 
 class Census:
-    """
+    '''
     docstring for Census class
-    """
+    '''
     def __init__(self, filepath='', header=1, datarange=(17,None), from_file=True, 
                  orig_df=pd.DataFrame({'empty':[0]}), orig_datarange=(None,None)):
         if from_file:
