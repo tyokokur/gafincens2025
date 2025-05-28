@@ -14,10 +14,10 @@ num_to_exel_col(n)
     Returns Excel-based column name corresponding to inputted number
     
 alias_labels(df, als)
-    Returns new dataframe from df with new column "alias" of row names updated using input als dict. If questions are not aliased, "alias" uses original row name 
+    Returns new dataframe from df with new column "alias" composed of first column updated using input als dict. If certain values are not aliased, original values are maintained
     
 move_to_bot(df, cond)
-    sdf
+    Returns new dataframe from df with 
 """
 
 import numpy as np, pandas as pd
