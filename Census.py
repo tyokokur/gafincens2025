@@ -26,7 +26,15 @@ count_multi_choice(colname, sort=True)
     for a multi-choice ("select all that apply") question, returns df of choices and number of responses indicating that choice
 
 section(datarange, orig_df)
-    returns a new
+    returns a new Census class instance using the inputted datarange
+
+show_qlist()
+    sdf
+    
+pop_other(colname)
+    s
+    
+_init_from_file(
 """
     
     def __init__(self, filepath='', header=1, datarange=(17,None), from_file=True, 
