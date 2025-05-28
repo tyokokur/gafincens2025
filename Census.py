@@ -14,10 +14,12 @@ num_to_exel_col(n)
     Returns Excel-based column name corresponding to inputted number
     
 alias_labels(df, als)
-    Returns new dataframe from df with new column "alias" composed of first column updated using input als dict. If certain values are not aliased, original values are maintained
+    Returns new dataframe from df with new column "alias" composed of first 
+      column updated using input als dict. If certain values are not aliased, 
+      original values are maintained
     
 move_to_bot(df, cond)
-    Returns new dataframe from df with 
+    Returns new dataframe from df reordered with row matching cond moved to the last row. Helpful for questions with 'Other' as one of many options
 """
 
 import numpy as np, pandas as pd
