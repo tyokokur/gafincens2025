@@ -28,7 +28,8 @@ import numpy as np, pandas as pd
 
 class Census:
     """ 
-    A class used to analyze Qualtrics data, designed for the UC Berkeley Graduate Assembly 2025 Financial Census
+    A class used to analyze Qualtrics data, designed for 
+     the UC Berkeley Graduate Assembly 2025 Financial Census
     
     ...
 
@@ -69,6 +70,19 @@ _init_from_file(filepath, header=1, datarange)
     
     def __init__(self, filepath='', header=1, datarange=(17,None), from_file=True, 
                  orig_df=pd.DataFrame({'empty':[0]}), orig_datarange=(None,None)):
+        """
+        Parameters
+        ----------
+        filepath : str
+            Local location of Qualtrics csv file to analyze
+        header : int
+            Row of column names (default 1)
+        datarange : (int, int)
+            Column indices corresponding to start and stop of data to store from input file
+             (default (17, None))
+        from_file : bool
+        
+        """
         if from_file:
             df = self._init_from_file(filepath=filepath, header=header, datarange=datarange)
             self.orig_datarange = datarange
@@ -94,6 +108,22 @@ _init_from_file(filepath, header=1, datarange)
         return
     
     def count_single_choice(self, colname, sort=True):
+    """For a single-choice question, returns df of choices and number of responses 
+        indicating that choice
+        
+        Parameters
+        ----------
+        colname : str
+            Name of column corresponding to question being asked
+        sort : bool, optional
+            Whether the data should be sorted (alpha, numer, etc.) based on the questions
+        
+        Returns
+        -------
+        df : pandas DataFrame
+            Columns 'labels' for response option and 'counts' for number of
+             responses which indicated that option
+    """
         data  = self.data_df[colname]
         labels= data[data.notna()].unique()
         if sort: labels.sort()
@@ -159,7 +189,3 @@ def alias_labels(df, als):
 def move_to_bot(df, cond):
     idx = df.index[cond]
     return pd.concat([df.drop(idx), df.loc[idx]], ignore_index=True)
-        
-        
-        
-        

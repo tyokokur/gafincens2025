@@ -73,12 +73,15 @@ _init_from_file(filepath, header=1, datarange)
         """
         Parameters
         ----------
-        filepath: str
+        filepath : str
             Local location of Qualtrics csv file to analyze
-        header: int
+        header : int
             Row of column names (default 1)
-        datarange: (int, int)
-            Column indices corresponding to start and stop of input file to read
+        datarange : (int, int)
+            Column indices corresponding to start and stop of data to store from input file
+             (default (17, None))
+        from_file : bool
+        
         """
         if from_file:
             df = self._init_from_file(filepath=filepath, header=header, datarange=datarange)
