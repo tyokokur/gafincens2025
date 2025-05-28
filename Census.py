@@ -1,29 +1,33 @@
 import numpy as np, pandas as pd
 
 class Census:
-    """ A class used to analyze Qualtrics data, designed for the UC Berkeley Graduate Assembly 2025 Financial Census
+    """ 
+    A class used to analyze Qualtrics data, designed for the UC Berkeley Graduate Assembly 2025 Financial Census
     
     ...
-    
-    Attributes
-    __________
-    data_df : pandas DataFrame
-        extracted data from csv with each row as a survey response
-    qlist : list of str
-        questions asked in survey (columns of data_df)
-    datarange : tuple of int
-        range of columns (questions) to store
-    num_popped : int
-        tracker of columns popped to maintain correct original spreadsheet column names
-        
-    Methods
-    _______
-    count_single_choice(colname, sort=True)
-        for a single-choice question, returns df of choices and number of responses indicating that choice
-        
-    count_multi_choice(colname, sort=True)
-        for a multi-choice ("select all that apply") question, returns df of choices and number of responses indicating that choice
-    """
+
+Attributes
+----------
+data_df : pandas DataFrame
+    extracted data from csv with each row as a survey response
+qlist : list of str
+    questions asked in survey (columns of data_df)
+datarange : tuple of int
+    range of columns (questions) to store
+num_popped : int
+    tracker of columns popped to maintain correct original spreadsheet column names
+
+Methods
+-------
+count_single_choice(colname, sort=True)
+    for a single-choice question, returns df of choices and number of responses indicating that choice
+
+count_multi_choice(colname, sort=True)
+    for a multi-choice ("select all that apply") question, returns df of choices and number of responses indicating that choice
+
+section(datarange, orig_df)
+    returns a new
+"""
     
     def __init__(self, filepath='', header=1, datarange=(17,None), from_file=True, 
                  orig_df=pd.DataFrame({'empty':[0]}), orig_datarange=(None,None)):
