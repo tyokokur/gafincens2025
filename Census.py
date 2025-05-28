@@ -6,7 +6,8 @@ Module providing Census class and three helper functions to analyze Qualtrics da
 Classes
 -------
 Census
-    class used to analyze Qualtrics data, designed for the UC Berkeley Graduate Assembly 2025 Financial Census
+    class used to analyze Qualtrics data, designed for 
+      the UC Berkeley Graduate Assembly 2025 Financial Census
 
 Functions
 ---------
@@ -15,11 +16,12 @@ num_to_exel_col(n)
     
 alias_labels(df, als)
     Returns new dataframe from df with new column "alias" composed of first 
-      column updated using input als dict. If certain values are not aliased, 
-      original values are maintained
+     column updated using input als dict. If certain values are not aliased, 
+     original values are maintained
     
 move_to_bot(df, cond)
-    Returns new dataframe from df reordered with row matching cond moved to the last row. Helpful for questions with 'Other' as one of many options
+    Returns new dataframe from df reordered with row matching cond moved to 
+     the last row. Helpful for questions with 'Other' as one of many options
 """
 
 import numpy as np, pandas as pd
@@ -44,10 +46,12 @@ num_popped : int
 Methods
 -------
 count_single_choice(colname, sort=True)
-    For a single-choice question, returns df of choices and number of responses indicating that choice
+    For a single-choice question, returns df of choices and number of responses 
+     indicating that choice
 
 count_multi_choice(colname, sort=True)
-    For a multi-choice ("select all that apply") question, returns df of choices and number of responses indicating that choice
+    For a multi-choice ("select all that apply") question, returns df of choices 
+     and number of responses indicating that choice
 
 section(datarange, orig_df)
     Returns a new Census class instance using the inputted datarange
@@ -56,7 +60,8 @@ show_qlist()
     Prints formatted list of questions stored corresponding to column names
     
 pop_other(colname)
-    Removes question corresponding to colname from self.data_df and print the responses received for that question
+    Removes question corresponding to colname from self.data_df and print the 
+     responses received for that question
     
 _init_from_file(filepath, header=1, datarange)
     Internal function initializing Census class instance from local file
