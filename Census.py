@@ -1,8 +1,23 @@
 """ 
 Module providing Census class and three helper functions to analyze Qualtrics data 
 
+...
 
+Classes
+-------
+Census
+    class used to analyze Qualtrics data, designed for the UC Berkeley Graduate Assembly 2025 Financial Census
 
+Functions
+---------
+num_to_exel_col(n)
+    sdf
+    
+alias_labels(df, als)
+    sdfs
+    
+move_to_bot(df, cond)
+    sdf
 """
 
 import numpy as np, pandas as pd
