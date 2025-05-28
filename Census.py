@@ -34,7 +34,8 @@ show_qlist()
 pop_other(colname)
     s
     
-_init_from_file(
+_init_from_file(filepath, header=1, datarange)
+    sdf
 """
     
     def __init__(self, filepath='', header=1, datarange=(17,None), from_file=True, 
