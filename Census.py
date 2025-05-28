@@ -101,7 +101,13 @@ _init_from_file(filepath, header=1, datarange)
         Parameters
         ----------
         colname : str
-            Name of colu
+            Name of column corresponding to question being asked
+        sort : bool, optional
+            Whether the data should be sorted (alpha, numer, etc.) based on the questions
+        
+        Returns
+        -------
+        df : 
     """
         data  = self.data_df[colname]
         labels= data[data.notna()].unique()
