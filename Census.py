@@ -1,7 +1,7 @@
 import numpy as np, pandas as pd
 
 class Census:
-    """Analysis of Qualtrics data, designed for UC Berkeley Graduate Assembly 2025 Financial Census
+    """ A class used to analyze Qualtrics data, designed for the UC Berkeley Graduate Assembly 2025 Financial Census
     
     ...
     
