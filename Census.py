@@ -70,6 +70,11 @@ _init_from_file(filepath, header=1, datarange)
     
     def __init__(self, filepath='', header=1, datarange=(17,None), from_file=True, 
                  orig_df=pd.DataFrame({'empty':[0]}), orig_datarange=(None,None)):
+        """
+        Parameters
+        ----------
+        
+        """
         if from_file:
             df = self._init_from_file(filepath=filepath, header=header, datarange=datarange)
             self.orig_datarange = datarange
@@ -107,7 +112,9 @@ _init_from_file(filepath, header=1, datarange)
         
         Returns
         -------
-        df : 
+        df : pandas DataFrame
+            Columns 'labels' for response option and 'counts' for number of
+             responses which indicated that option
     """
         data  = self.data_df[colname]
         labels= data[data.notna()].unique()
