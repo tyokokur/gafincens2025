@@ -20,19 +20,19 @@ num_popped : int
 Methods
 -------
 count_single_choice(colname, sort=True)
-    for a single-choice question, returns df of choices and number of responses indicating that choice
+    For a single-choice question, returns df of choices and number of responses indicating that choice
 
 count_multi_choice(colname, sort=True)
-    for a multi-choice ("select all that apply") question, returns df of choices and number of responses indicating that choice
+    For a multi-choice ("select all that apply") question, returns df of choices and number of responses indicating that choice
 
 section(datarange, orig_df)
-    returns a new Census class instance using the inputted datarange
+    Returns a new Census class instance using the inputted datarange
 
 show_qlist()
-    sdf
+    Print formatted list of questions stored corresponding to column names
     
 pop_other(colname)
-    s
+    Remove question corresponding to colname from 
     
 _init_from_file(filepath, header=1, datarange)
     sdf
