@@ -14,7 +14,7 @@ num_to_exel_col(n)
     Returns Excel-based column name corresponding to inputted number
     
 alias_labels(df, als)
-    Returns new dataframe from df with column alias of new, user-defined names for labels provided by dict als
+    Returns new dataframe from df with new column "alias" of row names updated using input als dict. If questions are not aliased, "alias" uses original row name 
     
 move_to_bot(df, cond)
     sdf
