@@ -11,7 +11,7 @@ Census
 Functions
 ---------
 num_to_exel_col(n)
-    sdf
+    Returns 
     
 alias_labels(df, als)
     sdfs
@@ -51,13 +51,13 @@ section(datarange, orig_df)
     Returns a new Census class instance using the inputted datarange
 
 show_qlist()
-    Print formatted list of questions stored corresponding to column names
+    Prints formatted list of questions stored corresponding to column names
     
 pop_other(colname)
-    Remove question corresponding to colname from self.data_df and print the responses received for that question
+    Removes question corresponding to colname from self.data_df and print the responses received for that question
     
 _init_from_file(filepath, header=1, datarange)
-    Internal function used to initialize Census class instance from local file
+    Internal function initializing Census class instance from local file
 """
     
     def __init__(self, filepath='', header=1, datarange=(17,None), from_file=True, 
