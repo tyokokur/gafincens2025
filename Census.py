@@ -1,3 +1,5 @@
+""" Module providing Cen"""
+
 import numpy as np, pandas as pd
 
 class Census:
@@ -32,10 +34,10 @@ show_qlist()
     Print formatted list of questions stored corresponding to column names
     
 pop_other(colname)
-    Remove question corresponding to colname from 
+    Remove question corresponding to colname from self.data_df and print the responses received for that question
     
 _init_from_file(filepath, header=1, datarange)
-    sdf
+    Internal function used to initialize Census class instance from local file
 """
     
     def __init__(self, filepath='', header=1, datarange=(17,None), from_file=True, 
