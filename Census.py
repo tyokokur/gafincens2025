@@ -1,4 +1,4 @@
-""" Module providing Cen"""
+""" Module providing Census class and three helper functions to analyze Qualtrics data """
 
 import numpy as np, pandas as pd
 
