@@ -28,7 +28,8 @@ import numpy as np, pandas as pd
 
 class Census:
     """ 
-    A class used to analyze Qualtrics data, designed for the UC Berkeley Graduate Assembly 2025 Financial Census
+    A class used to analyze Qualtrics data, designed for 
+     the UC Berkeley Graduate Assembly 2025 Financial Census
     
     ...
 
@@ -94,6 +95,14 @@ _init_from_file(filepath, header=1, datarange)
         return
     
     def count_single_choice(self, colname, sort=True):
+    """For a single-choice question, returns df of choices and number of responses 
+        indicating that choice
+        
+        Parameters
+        ----------
+        colname : str
+            Name of colu
+    """
         data  = self.data_df[colname]
         labels= data[data.notna()].unique()
         if sort: labels.sort()
@@ -159,7 +168,3 @@ def alias_labels(df, als):
 def move_to_bot(df, cond):
     idx = df.index[cond]
     return pd.concat([df.drop(idx), df.loc[idx]], ignore_index=True)
-        
-        
-        
-        
