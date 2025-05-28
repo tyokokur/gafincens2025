@@ -11,10 +11,10 @@ Census
 Functions
 ---------
 num_to_exel_col(n)
-    Returns 
+    Returns Excel-based column name corresponding to inputted number
     
 alias_labels(df, als)
-    sdfs
+    Returns new dataframe from df with column alias of new, user-defined names for labels provided by dict als
     
 move_to_bot(df, cond)
     sdf
