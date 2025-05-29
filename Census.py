@@ -172,9 +172,12 @@ _init_from_file(filepath, header=1, datarange)
         ----------
         datarange : (int, int)
             Column indices corresponding to start and stop of data to store from input file
+        orig_df : pandas DataFrame
+            Original dataframe to preserve data when initializing from other instance
             
-    
-        
+        Returns
+        -------
+        new Census instance
     """
         return Census(from_file=False, datarange=datarange, orig_df=orig_df, orig_datarange=self.orig_datarange)
         
