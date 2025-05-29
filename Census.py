@@ -255,6 +255,10 @@ def num_to_excel_col(n):
     n : int
         Number to convert to excel column name
     
+    Returns
+    -------
+    str
+        String of excel column (e.g., 'AQ')
     """
     
     # Source: https://stackoverflow.com/questions/23861680/convert-spreadsheet-number-to-column-letter
@@ -262,6 +266,16 @@ def num_to_excel_col(n):
     return '' if n < 0 else num_to_excel_col(d-1)+chr(m+65)
 
 def alias_labels(df, als):
+    """Returns new dataframe from df with new column "alias" composed of first 
+     column updated using input als dict. If certain values are not aliased, 
+     original values are maintained
+     
+    Parameters
+    ----------
+    df : pandas DataFrame
+        DataFrame to a
+    """
+    
     new = np.empty(df.shape[0], dtype=object)
     for i in range(len(new)):
         try: new[i] = als[df.iloc[i,0]]
