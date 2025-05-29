@@ -255,6 +255,10 @@ def num_to_excel_col(n):
     n : int
         Number to convert to excel column name
     
+    Returns
+    -------
+    str
+        String of excel column (e.g., 'AQ')
     """
     
     # Source: https://stackoverflow.com/questions/23861680/convert-spreadsheet-number-to-column-letter
@@ -262,6 +266,23 @@ def num_to_excel_col(n):
     return '' if n < 0 else num_to_excel_col(d-1)+chr(m+65)
 
 def alias_labels(df, als):
+    """Returns new dataframe from df with new column "alias" composed of first 
+     column updated using input als dict. If certain values are not aliased, 
+     original values are maintained
+     
+    Parameters
+    ----------
+    df : pandas DataFrame
+        DataFrame to apply aliasing to 
+    als : dict
+        Keys corresponding existing response options that should be aliased,
+         values corresponding to new aliased responses
+    
+    Returns
+    -------
+    pandas DataFrame with new column 'alias' containing new options, if applicable
+    """
+    
     new = np.empty(df.shape[0], dtype=object)
     for i in range(len(new)):
         try: new[i] = als[df.iloc[i,0]]
@@ -269,5 +290,21 @@ def alias_labels(df, als):
     return pd.concat([df,pd.Series(new, name='alias')], axis=1)
         
 def move_to_bot(df, cond):
+    """Returns new dataframe from df reordered with row matching cond moved to 
+     the last row. Helpful for questions with 'Other' as one of many options
+     
+    Parameters
+    ----------
+    df : pandas DataFrame
+        Original data
+    cond : list of bool
+        Mask corresponding to row that should be moved to the bottom
+         e.g., data.iloc[:,0 ]== 'Other (please specify)'
+         
+    Returns
+    -------
+    pandas DataFrame with row meeting cond moved to the last row
+    """
+    
     idx = df.index[cond]
     return pd.concat([df.drop(idx), df.loc[idx]], ignore_index=True)

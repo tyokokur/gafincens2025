@@ -299,7 +299,11 @@ def move_to_bot(df, cond):
         Original data
     cond : list of bool
         Mask corresponding to row that should be moved to the bottom
-         E.g., 
+         e.g., data.iloc[:,0 ]== 'Other (please specify)'
+         
+    Returns
+    -------
+    pandas DataFrame with row meeting cond moved to the last row
     """
     
     idx = df.index[cond]
