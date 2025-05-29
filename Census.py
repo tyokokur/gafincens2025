@@ -222,6 +222,17 @@ _init_from_file(filepath, header=1, datarange)
         return
     
     def _init_from_file(self, filepath, header=1, datarange=(17,None)): 
+    """Internal function initializing Census class instance from local file
+        
+        Parameters
+        ----------
+        filepath : str
+            Local location of Qualtrics csv file to analyze
+        header : int
+            Row of column names (default 1)
+        
+        
+    """
         from pathlib import Path
         p = Path(filepath)
         df = pd.read_csv(p, header=header)
