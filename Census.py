@@ -273,7 +273,14 @@ def alias_labels(df, als):
     Parameters
     ----------
     df : pandas DataFrame
-        DataFrame to a
+        DataFrame to apply aliasing to 
+    als : dict
+        Keys corresponding existing response options that should be aliased,
+         values corresponding to new aliased responses
+    
+    Returns
+    -------
+    pandas DataFrame with new column 'alias' containing new options an
     """
     
     new = np.empty(df.shape[0], dtype=object)
