@@ -75,17 +75,17 @@ _init_from_file(filepath, header=1, datarange)
         ----------
         filepath : str
             Local location of Qualtrics csv file to analyze
-        header : int
+        header : int, optional
             Row of column names (default 1)
-        datarange : (int, int)
+        datarange : (int, int), optional
             Column indices corresponding to start and stop of data to store from input file
              (default (17, None))
-        from_file : bool
+        from_file : bool, optional
             Whether to initialize instance from file (e.g., from Qualtrics CSV) or from 
-             Census.section() method
-        orig_df : pandas DataFrame
+             Census.section() method (default True)
+        orig_df : pandas DataFrame, optional
             Original dataframe to preserve data when initializing from other instance
-        orig_datagrange : (int, int)
+        orig_datagrange : (int, int), optional
             Original datarange to preserve correct column names from first instance
         """
         
