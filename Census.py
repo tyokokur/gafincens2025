@@ -280,7 +280,7 @@ def alias_labels(df, als):
     
     Returns
     -------
-    pandas DataFrame with new column 'alias' containing new options an
+    pandas DataFrame with new column 'alias' containing new options, if applicable
     """
     
     new = np.empty(df.shape[0], dtype=object)
@@ -290,5 +290,17 @@ def alias_labels(df, als):
     return pd.concat([df,pd.Series(new, name='alias')], axis=1)
         
 def move_to_bot(df, cond):
+    """Returns new dataframe from df reordered with row matching cond moved to 
+     the last row. Helpful for questions with 'Other' as one of many options
+     
+    Parameters
+    ----------
+    df : pandas DataFrame
+        Original data
+    cond : list of bool
+        Mask corresponding to row that should be moved to the bottom
+         E.g., 
+    """
+    
     idx = df.index[cond]
     return pd.concat([df.drop(idx), df.loc[idx]], ignore_index=True)
