@@ -138,6 +138,22 @@ _init_from_file(filepath, header=1, datarange)
         return df
     
     def count_multi_choice(self, colname, sort=True):
+    """For a multi-choice ("select all that apply") question, returns df of choices 
+        and number of responses indicating that choice
+        
+        Parameters
+        ----------
+        colname : str
+            Name of column corresponding to question being asked
+        sort : bool, optional
+            Whether the data should be sorted (alpha, numer, etc.) based on the questions
+     
+        Returns
+        -------
+        df : pandas DataFrame
+            Columns 'labels' for response option and 'counts' for number of
+             responses which indicated that option
+    """
         data = self.data_df[colname].str.split(',', expand=True)
         labels = pd.unique(data[data.notna()].values.flatten())
         labels = labels[pd.notnull(labels)]
