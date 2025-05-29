@@ -1,4 +1,5 @@
-"""Module providing Census class and three helper functions to analyze Qualtrics data 
+"""  
+Module providing Census class and three helper functions to analyze Qualtrics data 
 
 ...
 
