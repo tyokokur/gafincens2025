@@ -11,7 +11,7 @@ Census
 
 Functions
 ---------
-num_to_exel_col(n)
+num_to_excel_col(n)
     Returns Excel-based column name corresponding to inputted number
     
 alias_labels(df, als)
@@ -108,8 +108,8 @@ _init_from_file(filepath, header=1, datarange)
         lastcol = df.shape[1]+self.orig_datarange[0]+datarange[0]-1
         print('Initialization completed.')
         print('Data recorded')
-        print('\tfrom column {}: \n\t\t"{}"'.format(num_to_exel_col(firstcol), self.qlist[0]))
-        print('\tto column {}: \n\t\t"{}"'.format(num_to_exel_col(lastcol), self.qlist[-1]))
+        print('\tfrom column {}: \n\t\t"{}"'.format(num_to_excel_col(firstcol), self.qlist[0]))
+        print('\tto column {}: \n\t\t"{}"'.format(num_to_excel_col(lastcol), self.qlist[-1]))
         print('{} responses.\n{} questions asked.'.format(*df.shape))
         return
     
@@ -208,7 +208,7 @@ _init_from_file(filepath, header=1, datarange)
         ind = self.data_df.columns.get_loc(colname)
         print_fil = lambda x: print('\tResponses: '+str([i for i in x[x.notna()]]))
         
-        print('Popping Q{} (column {}): \n\t{}'.format(ind+self.num_popped+1, num_to_exel_col(self.datarange[0]+self.orig_datarange[0]+ind+self.num_popped), self.qlist[ind]))
+        print('Popping Q{} (column {}): \n\t{}'.format(ind+self.num_popped+1, num_to_excel_col(self.datarange[0]+self.orig_datarange[0]+ind+self.num_popped), self.qlist[ind]))
         self.num_popped += 1
         
         other = self.data_df.pop(self.qlist[ind])
@@ -238,6 +238,7 @@ _init_from_file(filepath, header=1, datarange)
         df : pandas DataFrame 
             Data read from csv within datarange
     """
+    
         from pathlib import Path
         p = Path(filepath)
         df = pd.read_csv(p, header=header)
@@ -246,10 +247,19 @@ _init_from_file(filepath, header=1, datarange)
         df = df.iloc[:, datarange[0]:datarange[1]] # Discard unnecessary data
         return df
         
-def num_to_exel_col(n):
+def num_to_excel_col(n):
+    """Returns Excel-based column name corresponding to inputted number
+
+    Parameters
+    ----------
+    n : int
+        Number to convert to excel column name
+    
+    """
+    
     # Source: https://stackoverflow.com/questions/23861680/convert-spreadsheet-number-to-column-letter
     d, m = divmod(n,26) # 26 is the number of ASCII letters
-    return '' if n < 0 else num_to_exel_col(d-1)+chr(m+65)
+    return '' if n < 0 else num_to_excel_col(d-1)+chr(m+65)
 
 def alias_labels(df, als):
     new = np.empty(df.shape[0], dtype=object)
