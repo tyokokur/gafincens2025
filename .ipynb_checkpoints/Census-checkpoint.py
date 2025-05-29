@@ -81,7 +81,12 @@ _init_from_file(filepath, header=1, datarange)
             Column indices corresponding to start and stop of data to store from input file
              (default (17, None))
         from_file : bool
-        
+            Whether to initialize instance from file (e.g., from Qualtrics CSV) or from 
+             Census.section() method
+        orig_df : pandas DataFrame
+            Original dataframe to preserve data when initializing from other instance
+        orig_datagrange : (int, int)
+            Original datarange to preserve correct column names from first instance
         """
         if from_file:
             df = self._init_from_file(filepath=filepath, header=header, datarange=datarange)
