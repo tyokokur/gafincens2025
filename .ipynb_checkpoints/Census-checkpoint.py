@@ -1,5 +1,4 @@
-""" 
-Module providing Census class and three helper functions to analyze Qualtrics data 
+"""Module providing Census class and three helper functions to analyze Qualtrics data 
 
 ...
 
@@ -73,7 +72,7 @@ _init_from_file(filepath, header=1, datarange)
         """
         Parameters
         ----------
-        filepath : str
+        filepath : str, optional
             Local location of Qualtrics csv file to analyze
         header : int, optional
             Row of column names (default 1)
