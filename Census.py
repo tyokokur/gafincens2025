@@ -123,6 +123,7 @@ _init_from_file(filepath, header=1, datarange)
                 Name of column corresponding to question being asked
             sort : bool, optional
                 Whether the data should be sorted (alpha, numer, etc.) based on the questions
+                 (default True)
 
             Returns
             -------
@@ -173,9 +174,9 @@ _init_from_file(filepath, header=1, datarange)
 
             Parameters
             ----------
-            datarange : (int, int)
+            datarange : (int, int), optional
                 Column indices corresponding to start and stop of data to store from input file
-            orig_df : pandas DataFrame
+            orig_df : pandas DataFrame, optional
                 Original dataframe to preserve data when initializing from other instance
 
             Returns
@@ -228,9 +229,9 @@ _init_from_file(filepath, header=1, datarange)
             ----------
             filepath : str
                 Local location of Qualtrics csv file to analyze
-            header : int
+            header : int, optional
                 Row of column names (default 1)
-            datarange : (int, int)
+            datarange : (int, int), optional
                 Column indices corresponding to start and stop of data to store from input file
                  (default (17, None))
 
