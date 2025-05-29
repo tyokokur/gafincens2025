@@ -147,6 +147,7 @@ _init_from_file(filepath, header=1, datarange)
             Name of column corresponding to question being asked
         sort : bool, optional
             Whether the data should be sorted (alpha, numer, etc.) based on the questions
+            (default True)
      
         Returns
         -------
@@ -165,6 +166,16 @@ _init_from_file(filepath, header=1, datarange)
         return df
         
     def section(self, datarange=(None,None), orig_df=pd.DataFrame({'empty':[0]})):
+    """Returns a new Census class instance using the inputted datarange
+    
+        Parameters
+        ----------
+        datarange : (int, int)
+            Column indices corresponding to start and stop of data to store from input file
+            
+    
+        
+    """
         return Census(from_file=False, datarange=datarange, orig_df=orig_df, orig_datarange=self.orig_datarange)
         
     def show_qlist(self):
