@@ -230,8 +230,13 @@ _init_from_file(filepath, header=1, datarange)
             Local location of Qualtrics csv file to analyze
         header : int
             Row of column names (default 1)
+        datarange : (int, int)
+            Column indices corresponding to start and stop of data to store from input file
+             (default (17, None))
         
-        
+        Returns
+        df : pandas DataFrame 
+            Data read from csv within datarange
     """
         from pathlib import Path
         p = Path(filepath)
