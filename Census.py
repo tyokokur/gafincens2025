@@ -88,6 +88,7 @@ _init_from_file(filepath, header=1, datarange)
         orig_datagrange : (int, int)
             Original datarange to preserve correct column names from first instance
         """
+        
         if from_file:
             df = self._init_from_file(filepath=filepath, header=header, datarange=datarange)
             self.orig_datarange = datarange
@@ -129,6 +130,7 @@ _init_from_file(filepath, header=1, datarange)
             Columns 'labels' for response option and 'counts' for number of
              responses which indicated that option
     """
+    
         data  = self.data_df[colname]
         labels= data[data.notna()].unique()
         if sort: labels.sort()
@@ -155,6 +157,7 @@ _init_from_file(filepath, header=1, datarange)
             Columns 'labels' for response option and 'counts' for number of
              responses which indicated that option
     """
+    
         data = self.data_df[colname].str.split(',', expand=True)
         labels = pd.unique(data[data.notna()].values.flatten())
         labels = labels[pd.notnull(labels)]
@@ -179,13 +182,29 @@ _init_from_file(filepath, header=1, datarange)
         -------
         new Census instance
     """
+    
         return Census(from_file=False, datarange=datarange, orig_df=orig_df, orig_datarange=self.orig_datarange)
         
     def show_qlist(self):
+    """Prints formatted list of questions stored corresponding to column names"""
+    
         print(*['\t{}. {}\n'.format(ind+1, i) for ind, i in enumerate(self.qlist)])
         return
     
     def pop_other(self, colname):
+    """Removes question corresponding to colname from self.data_df and print the 
+        responses received for that question
+        
+        Parameters
+        ----------
+        colname : str
+            Name of column corresponding to question being asked
+            
+        Returns
+        -------
+        None
+    """
+    
         ind = self.data_df.columns.get_loc(colname)
         print_fil = lambda x: print('\tResponses: '+str([i for i in x[x.notna()]]))
         
@@ -199,6 +218,8 @@ _init_from_file(filepath, header=1, datarange)
             print_fil(other)
         else: 
             print('\tResponses: None')
+            
+        return
     
     def _init_from_file(self, filepath, header=1, datarange=(17,None)): 
         from pathlib import Path
